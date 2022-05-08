@@ -49,27 +49,27 @@
                                 <label class="test" for="firstName">Prénom</label><br>
                                 <input class="text-control" type="text" id="firstName" name="firstName"/><br>
                             </div>
-                            <div id="firstNameValidation"></div>
+                            <p id="firstNameValidation"></p>
                             <div class="formData">
                                 <label for="lastName">Nom</label><br>
                                 <input class="text-control" type="text" id="lastName" name="lastName"/><br>
                             </div>
-                            <div id="lastNameValidation"></div>
+                            <p id="lastNameValidation"></p>
                             <div class="formData">
                                 <label for="email">E-mail</label><br>
                                 <input class="text-control" type="email" id="email" name="email"/><br>
                             </div>
-                            <div id="emailValidation"></div>
+                            <p id="emailValidation"></p>
                             <div class="formData">
                                 <label for="birthdate">Date de naissance</label><br>
                                 <input class="text-control" type="date" id="birthdate" name="birthdate"/><br>
                             </div>
-                            <div id="birthdateValidation"></div>
+                            <p id="birthdateValidation"></p>
                             <div class="formData">
                                 <label for="numTournaments">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                                 <input type="number" class="text-control" id="numTournaments" name="numTournaments" min="0" max="99">
                             </div>
-                            <div id="numTournamentsValidation"></div>
+                            <p id="numTournamentsValidation"></p>
                             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
                             <div class="formData">
                                 <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
@@ -90,20 +90,20 @@
                                 <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland"/>
                                 <label class="checkbox-label" for="location6"><span class="checkbox-icon"></span>Portland</label>
                             </div>
-                            <div id="locationValidation"></div>
+                            <p id="locationValidation"></p>
                             <div class="formData">
                                 <input class="checkbox-input" type="checkbox" id="checkbox1" checked/>
                                 <label class="checkbox2-label" for="checkbox1" required> <span class="checkbox-icon"></span>J'ai lu et accepté les conditions d'utilisation.</label><br>
-                                <div id="termsValidation"></div>
+                                <p id="termsValidation"></p>
 
                                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                                 <label class="checkbox2-label" for="checkbox2"><span class="checkbox-icon"></span>Je souhaite être prévenu des prochains évènements.</label><br>
                             </div>
                             <input class="btn-submit" id="submit" type="submit" class="button" value="C'est parti"/>
                         </form>
-                        <div class="confirmation">
-                            <p id="thanksMsg"></p>
-                            <button id="closeBtn" class="button">Fermer</button>
+                        <div id="confirmation">
+                            <p class="thanksMsg">Merci pour votre inscription</p>
+                            <input id="btnEnd" class="button btn-end" type="button" value="Fermer"/>
                         </div>
                     </div>
                 </div>

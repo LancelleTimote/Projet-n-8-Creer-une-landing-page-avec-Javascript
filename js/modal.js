@@ -10,7 +10,6 @@ if (x.className === "topnav") {
 //Récupération des éléments
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
 const modalBtnClose = document.querySelector('.close');
 
 const form = document.querySelector("#form");
@@ -23,8 +22,8 @@ const locTournament = document.getElementsByName("location");
 const terms = document.querySelector("#checkbox1");
 const notifications = document.querySelector("#checkbox2");
 const btnSubmit = document.querySelector("#submit");
-const thanksMsg = document.querySelector("#thanksMsg");
-const closeBtn = document.querySelector("#closeBtn");
+const confirmation = document.querySelector("#confirmation");
+const btnEnd = document.querySelector('#btnEnd');
 
 const firstNameValidation = document.querySelector("#firstNameValidation");
 const lastNameValidation = document.querySelector("#lastNameValidation");
@@ -59,26 +58,26 @@ function textCorrectForm(querySelectorId){
 
 //Couleur texte champ correct
 function colorTextCorrectForm(querySelectorId) {
-    document.querySelector(`#${querySelectorId}`).classList.add("div-valide");
-    document.querySelector(`#${querySelectorId}`).classList.remove("div-error");
+    document.querySelector(`#${querySelectorId}`).classList.add("p-valide");
+    document.querySelector(`#${querySelectorId}`).classList.remove("p-error");
 }
 
 //Couleur texte champ incorrect
 function colorTextIncorrectForm(querySelectorId) {
-    document.querySelector(`#${querySelectorId}`).classList.add("div-error");
-    document.querySelector(`#${querySelectorId}`).classList.remove("div-valide");
+    document.querySelector(`#${querySelectorId}`).classList.add("p-error");
+    document.querySelector(`#${querySelectorId}`).classList.remove("p-valide");
 }
 
-//Couleur background champ correct
-function colorBackgroundCorrectForm(querySelectorId) {
-    document.querySelector(`#${querySelectorId}`).classList.add("background-valide");
-    document.querySelector(`#${querySelectorId}`).classList.remove("background-error");
+//Couleur border champ correct
+function colorBorderCorrectForm(querySelectorId) {
+    document.querySelector(`#${querySelectorId}`).classList.add("border-valide");
+    document.querySelector(`#${querySelectorId}`).classList.remove("border-error");
 }
 
-//Couleur background champ incorrect
-function colorBackgroundIncorrectForm(querySelectorId) {
-    document.querySelector(`#${querySelectorId}`).classList.add("background-error");
-    document.querySelector(`#${querySelectorId}`).classList.remove("background-valide");
+//Couleur border champ incorrect
+function colorBorderIncorrectForm(querySelectorId) {
+    document.querySelector(`#${querySelectorId}`).classList.add("border-error");
+    document.querySelector(`#${querySelectorId}`).classList.remove("border-valide");
 }
 
 //Vérification dynamique du lieu du tournoi
@@ -98,12 +97,12 @@ function firstNameControl() {
     if (regExLastnameFirstname(firstName.value)) {
         textCorrectForm("firstNameValidation");
         colorTextCorrectForm("firstNameValidation");
-        colorBackgroundCorrectForm("firstName");
+        colorBorderCorrectForm("firstName");
         return true;
     } else {
         firstNameValidation.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
         colorTextIncorrectForm("firstNameValidation");
-        colorBackgroundIncorrectForm("firstName");
+        colorBorderIncorrectForm("firstName");
         return false;
     }
 }
@@ -113,12 +112,12 @@ function lastNameControl() {
     if (regExLastnameFirstname(lastName.value)) {
         textCorrectForm("lastNameValidation");
         colorTextCorrectForm("lastNameValidation");
-        colorBackgroundCorrectForm("lastName");
+        colorBorderCorrectForm("lastName");
         return true;
     } else {
         lastNameValidation.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
         colorTextIncorrectForm("lastNameValidation");
-        colorBackgroundIncorrectForm("lastName");
+        colorBorderIncorrectForm("lastName");
         return false;
     }
 }
@@ -128,12 +127,12 @@ function emailControl() {
     if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email.value)) {
         textCorrectForm("emailValidation");
         colorTextCorrectForm("emailValidation");
-        colorBackgroundCorrectForm("email");
+        colorBorderCorrectForm("email");
         return true;
     } else {
         emailValidation.innerHTML = "Veuillez entrer un email valide.";
         colorTextIncorrectForm("emailValidation");
-        colorBackgroundIncorrectForm("email");
+        colorBorderIncorrectForm("email");
         return false;
     }
 }
@@ -143,12 +142,12 @@ function birthdateControl() {
     if(/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/.test(birthdate.value)) {
         textCorrectForm("birthdateValidation");
         colorTextCorrectForm("birthdateValidation");
-        colorBackgroundCorrectForm("birthdate");
+        colorBorderCorrectForm("birthdate");
         return true;
     } else {
         birthdateValidation.innerHTML = "Veuillez entrer votre date de naissance.";
         colorTextIncorrectForm("birthdateValidation");
-        colorBackgroundIncorrectForm("birthdate");
+        colorBorderIncorrectForm("birthdate");
         return false;
     }
 }
@@ -158,12 +157,12 @@ function numTournamentsControl() {
     if(/^[0-9]{1,3}$/.test(numTournaments.value)) {
         textCorrectForm("numTournamentsValidation");
         colorTextCorrectForm("numTournamentsValidation");
-        colorBackgroundCorrectForm("numTournaments");
+        colorBorderCorrectForm("numTournaments");
         return true;
     } else {
         numTournamentsValidation.innerHTML = "Veuillez indiquer le nombre de tournoi.";
         colorTextIncorrectForm("numTournamentsValidation");
-        colorBackgroundIncorrectForm("numTournaments");
+        colorBorderIncorrectForm("numTournaments");
         return false;
     }
 }
@@ -205,8 +204,9 @@ function getlocTournament() {
     return result;
 }
 
-closeBtn.addEventListener('click', function(event) {
+btnEnd.addEventListener('click', function(event) {
     modalbg.style.display = "none";
+    window.location.reload();
 })
 
 //Événement au click bouton submit
@@ -222,11 +222,12 @@ btnSubmit.addEventListener('click', function(event) {
             "Nombre de tournois :", numTournaments.value,
             "Lieu de tournoi :", getlocTournament(),
             "Conditions d'utilisation :", terms.checked,
-            "Notifications :", notifications.checked
+            "Notifications :", notifications.checked,
         );
         form.style.display = "none";
-        thanksMsg.innerHTML = "Merci pour votre inscription";
-        closeBtn.style.display = "block";
+        confirmation.style.display = "flex";
+        confirmation.style.flexDirection = "column";
+        confirmation.style.alignItems = "center";
     } else {
         alert("Veuillez remplir correctement le formulaire.");
     }
