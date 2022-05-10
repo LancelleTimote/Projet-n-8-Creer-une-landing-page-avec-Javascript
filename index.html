@@ -11,7 +11,7 @@
     <body>
         <header class="topnav" id="myTopnav">
             <div class="header-logo">
-                <img alt="logo" src="img/Logo.png" width="auto" height="auto" />
+                <img alt="logo" src="img/Logo.png" />
             </div>
             <nav class="main-navbar">
                 <a href="#" class="active"><span>Accueil</span></a>
@@ -41,7 +41,7 @@
                 <div class="content">
                     <span class="close"></span>
                     <div class="modal-body">
-                        <form id="form" name="reserve" action="index.html" method="get" action="form-handler">
+                        <form id="form" name="reserve" action="form-handler" method="get">
                             <div class="formData">
                                 <label class="test" for="firstName">Prénom</label><br>
                                 <input class="text-control" type="text" id="firstName" name="firstName"/><br>
@@ -90,13 +90,13 @@
                             <p id="locationValidation"></p>
                             <div class="formData">
                                 <input class="checkbox-input" type="checkbox" id="checkbox1" checked/>
-                                <label class="checkbox2-label" for="checkbox1" required> <span class="checkbox-icon"></span>J'ai lu et accepté les conditions d'utilisation.</label><br>
+                                <label class="checkbox2-label" for="checkbox1"> <span class="checkbox-icon"></span>J'ai lu et accepté les conditions d'utilisation.</label><br>
                                 <p id="termsValidation"></p>
 
                                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                                 <label class="checkbox2-label" for="checkbox2"><span class="checkbox-icon"></span>Je souhaite être prévenu des prochains évènements.</label><br>
                             </div>
-                            <input class="btn-submit" id="submit" type="submit" class="button" value="C'est parti"/>
+                            <input class="btn-submit button" id="submit" type="submit" value="C'est parti"/>
                         </form>
                         <div id="confirmation">
                             <p class="thanksMsg">Merci pour votre inscription</p>
