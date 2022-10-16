@@ -4,6 +4,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/LancelleTimote/Projet-n-8-Creer-une-landing-page-avec-Javascript?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/LancelleTimote/Projet-n-8-Creer-une-landing-page-avec-Javascript?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/LancelleTimote/Projet-n-8-Creer-une-landing-page-avec-Javascript?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/LancelleTimote/Projet-n-8-Creer-une-landing-page-avec-Javascript?style=for-the-badge)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/timote-lancelle-devweb/)
 
 ## :mag: Aperçu
